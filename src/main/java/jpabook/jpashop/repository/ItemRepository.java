@@ -19,7 +19,8 @@ public class ItemRepository {
             return;
         }
 
-        em.merge(item);
+        // 실무에서는 merge 대신 변경 감지 사용할 것!
+        em.merge(item); // 파라미터로 넘어온 item은 merge 후에도 준영속 상태
     }
 
     public Item findOne(Long id) {
